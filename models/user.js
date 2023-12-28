@@ -1,4 +1,7 @@
 const Joi = require("joi");
+
+const emailRegexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
 const registerSchema = Joi.object({
   name: Joi.string().required().messages({
     "string.base": `name should be a type of text`,
@@ -10,5 +13,7 @@ const registerSchema = Joi.object({
   password: Joi.string().min(4).required().messages({
     "any.required": "Set password for user",
   }),
-  subscription: Joi.string().valid("starter", "pro", "business"),
+  level: Joi.string().valid("A1", "A2", "B1", "B2"),
 });
+
+module.exports = registerSchema;
