@@ -13,5 +13,8 @@ router.get("/", async (req, res, next) => {
     // res.status(status).json({ message });
   }
 });
-router.put("/:id", (req, res) => {}); //update the word with users id
+router.put("/:id", async (req, res, next) => {
+  try {
+  } catch (error) {}
+}); //update the word with users id
 module.exports = router;
